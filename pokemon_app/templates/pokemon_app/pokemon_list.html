@@ -1,0 +1,39 @@
+{% extends 'pokemon_app/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<nav class="navigation">
+  <input type="image" class="freddie" src="{% static 'images/freddie.svg' %}"/>
+  <h1>Mailchimp's Favorite Pokemon</h1>
+</nav>
+<ul class="pokemon-list">
+
+
+  {% for pokemon in pokemons %}
+  <li class="pokemon">
+    <div class="pokemon-img-container">
+      <img class='crop' src="https://raw.githubusercontent.com{{pokemon.image_url}}">
+    </div>
+    <div class="pokemon-info">
+      <h2 class="pokemon-name">{{pokemon.name}}</h2>
+      <h3>{{pokemon.title}}</h3>
+      <p>{{pokemon.bio}}</p>
+      <br/>
+      <p class="pokemon-work-question">Do you like {{pokemon.name}}?</p>
+      <form class="pokemon-like-form" action="{% url 'create_like' %}" method="post">
+        {% csrf_token %}
+        <input name='pokemon-like-id' value="{{pokemon.id}}" hidden>
+        <input type="image"
+        {% if pokemon.id|stringformat:"i" in request.session.liked_user_ids %}disabled{% endif %}
+        class="pokemon-like" src="{% static 'images/thumbs-up.svg' %}"/>
+      </form>
+      <p class="liked-confirmation"
+        {% if pokemon.id|stringformat:"i" not in request.session.liked_user_ids %}style="display:none"{% endif %}
+      >You like this pokemon!</p>
+      <p class="pokemon-likes-total"><span class='total-likes'>{{pokemon.get_like_count}}</span> people like this pokemon!</p>
+    </div>
+  </li>
+  <hr>
+  {% endfor %}
+</ul>
+{% endblock %}

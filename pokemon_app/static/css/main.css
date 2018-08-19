@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+* {
+  font-weight: 300;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  color: #e86138
+}
+h2, h3 {
+  margin: 0;
+  margin-bottom:10px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #dad8d8;
+  width: 100%;
+}
+
+li {
+	list-style: none;
+  display: block;
+  width: 100%;
+  min-width: 225px;
+  min-height: 225px;
+}
+
+p {
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0;
+  line-height: 18px;
+}
+
+.navigation {
+  background-color: #2c9ab7;
+}
+
+.navigation h1 {
+    color: white;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+}
+
+.crop {
+  width: 225px;
+  height: 225px;
+  float: left;
+  padding-right: 30px;
+}
+
+.pokemon-img-container {
+  padding: 0px 30px;
+}
+
+.pokemon-work-question {
+  display: inline-block;
+}
+
+.pokemon {
+  position: relative;
+}
+
+.like-container{
+  position: absolute;
+  bottom: 0;
+  font-weight: bold;
+}
+
+.pokemon-name {
+  font-weight: bold;
+}
+
+.pokemon-info {
+  display: inline-block;
+  width: 65%;
+}
+
+.pokemon-like {
+  width: 15px;
+}
+
+.freddie {
+  width: 50px;
+  margin:8px;
+}
+
+.liked-confirmation {
+  display: inline-block;
+}
+
+.pokemon-like-form {
+  display: inline-block;
+}
+
+.pokemon-list {
+  padding: 0;
+}
+
+.total-likes, .pokemon-work-question {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 860px) {
+  .pokemon-info {
+    display: inline-block;
+    width: 100%
+  }
+  .pokemon-img-container {
+    padding: 0px;
+  }
+  .like-container {
+    position: initial
+  }
+}
